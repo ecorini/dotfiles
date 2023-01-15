@@ -1,0 +1,27 @@
+#
+# ~/.bashrc
+#
+
+# If not running interactively, don't do anything
+[[ $- != *i* ]] && return
+
+PS1='\[\e[1;32m\]\u\[\e[37m\]@\[\e[1;35m\]\h\[\e[m\] \[\e[1;34m\]\W\[\e[m\] \[\e[1;32m\]\$\[\e[m\] \[\e[37m\]'
+
+# Alias
+alias ls='ls --color=auto'
+alias vi='vim'
+
+# Path
+PATH=$PATH:/home/emanuele/Scripts/
+PATH=$PATH:/home/emanuele/.local/bin/
+PATH=$PATH:/home/emanuele/workspace/esp-open-sdk/xtensa-lx106-elf/bin
+PATH=$PATH:/home/emanuele/.local/share/gem/ruby/3.0.0/bin
+
+# ESP8266 sdk
+export XTENSA_BIN_FOLDER=/home/emanuele/workspace/esp-open-sdk/xtensa-lx106-elf/bin
+export ESP8266_SDK_PATH=/home/emanuele/workspace/esp-open-sdk/sdk
+
+# sudo autocompletion
+complete -cf sudo
+
+
