@@ -1,0 +1,15 @@
+# Static information about the filesystems.
+# See fstab(5) for details.
+
+# <file system> <dir> <type> <options> <dump> <pass>
+# /dev/sda3
+UUID=23587689-6da9-421a-9d16-57f4cb62bf08	/         	ext4      	rw,relatime	0 1
+
+# /dev/sda1
+UUID=4D3E-506B      	/boot      	vfat      	rw,relatime,fmask=0022,dmask=0022,codepage=437,iocharset=ascii,shortname=mixed,utf8,errors=remount-ro	0 2
+
+# /dev/sda2
+UUID=a4eaff8b-f952-44d3-8689-585d06295310	none      	swap      	defaults  	0 0
+
+# GoodCloud
+https://use04.thegood.cloud/remote.php/dav/files/ecorini@gmail.com	/mnt/goodcloud	davfs	rw,user,uid=emanuele,noauto	0 0

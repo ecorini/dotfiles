@@ -1,0 +1,199 @@
+{
+  "layer": "bottom",
+  "position": "top",
+  "output": "eDP-1",
+  "modules-left": [
+//    "custom/logo",
+    "hyprland/workspaces",
+    "hyprland/window",
+  ],
+//    "disk",
+//    "memory",
+//    "cpu",
+//    "temperature",
+//  "modules-center": [
+//    "hyprland/window",
+//  ],
+//    "temperature",
+//    "mpd",
+  "modules-right": [
+    "cpu",
+    "temperature",
+    "custom/updates",
+    "backlight",
+    "custom/hypridle",
+    "custom/daynight",
+    "bluetooth",
+    "network",
+    "pulseaudio",
+    "pulseaudio#mic",
+    "battery",
+    "clock",
+  ],
+  "reload_style_on_change": true,
+  "custom/logo": {
+    "format": "",
+    "tooltip": false,
+  },
+  "clock": {
+    "tooltip-format": "<big>{:%A %d}</big>\n<tt><small>{calendar}</small></tt>",
+    "format": "<b>{:%H:%M}</b>",
+    "format-alt": "{:%a %d/%m/%y, Week %W}"
+  },
+  "hyprland/language": {
+    "format": "Lang: {long}",
+    "format-en": "AMERICA, HELL YEAH!",
+    "format-tr": "As bayrakları",
+    "keyboard-name": "at-translated-set-2-keyboard"
+  },
+  "disk": {
+    "interval": 30,
+    "format": "{percentage_used}%",
+    "path": "/"
+  },
+  "memory": {
+    "format": "{percentage}%"
+  },
+  "cpu": {
+    "interval": 1,
+    "format": "CPU: {usage}%",
+    "on-click-right": "hyprctl dispatch togglespecialworkspace sysinfo"
+  },
+  "temperature": {
+    "format": "TEMP: {temperatureC}°C",
+    "format-critical": "TEMP: {temperatureC}°C",
+    "interval": 10,
+    "critical-threshold": 80,
+    "on-click-right": "hyprctl dispatch togglespecialworkspace sysinfo"
+  },
+  "hyprland/workspaces": {
+    "format": "{icon}",
+    "format-icons": {
+//	  	"1": "",
+//		  "2": "",
+//		  "3": "",
+//		  "4": "",
+//		  "active": "",
+//		  "default": "" 
+    },   
+  "persistent-workspaces": {
+      "*": [
+        1,
+        2,
+        3,
+        4,
+      ]
+    },
+    "show-special": true,
+    "special-visible-only":true
+  },
+  "hyprland/window": {
+    "format": "[{title}]",
+  },
+
+  "custom/updates": {
+    "format": "{icon}<span foreground=\"orange\">{}</span>",
+    "return-type": "json",
+    "format-icons": {
+      "pending-updates": "Updates: ",
+      "updated": "Up to date"
+    },
+    "exec-if": "which waybar-updates",
+    "exec": "waybar-updates",
+    "on-click": "alacritty -T yay -e yay -Syu &"
+  },
+
+  "custom/clipboard": {
+    // "exec": "echo '󰅍'",
+    "interval": 5,
+    "tooltip": true,
+    // "tooltip-format": "{output}",
+    // "exec-tooltip": "sh -c cliphist list | head -n 5",
+    "on-click": "sh -c 'cliphist list | rofi -dmenu | cliphist decode | wl-copy'"
+  },
+  "backlight": {
+    "format": "BKL: {percent}%",
+    "on-scroll-down": "brightnessctl -n set 10%-",
+    "on-scroll-up": "brightnessctl -n set +10%",
+  },
+  "bluetooth": {
+    "format": "<span foreground=\"red\">BT: Err</span>",
+    "format-on": "BT: On",
+    "format-off": "BT: Off",
+    "format-disabled": "BT: Dis.",
+    "format-connected": "BT: Conn.",
+    "format-connected-battery": "BT: Connected",
+    "tooltip-format": "{controller_alias}\t{controller_address}\n\n{num_connections} connected",
+    "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}",
+    "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
+    "tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_address}\t{device_battery_percentage}%",
+    "on-click-right": "pidof bluetui || alacritty -T bluetui -e bluetui &"
+  },
+  "pulseaudio": {
+    "format": "SPK: {volume}%",
+    "format-bluetooth": "BT SPK: {volume}%",
+    "format-muted": "<span foreground=\"red\">SPK: OFF</span>",
+    "scroll-step": 5,
+    "on-scroll-up": "pactl set-sink-volume @DEFAULT_SINK@ +5%",
+    "on-scroll-down": "pactl set-sink-volume @DEFAULT_SINK@ -5%",
+    "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+    "on-click-right": "pidof pulsemixer || alacritty -T pulsemixer -e pulsemixer &",
+  },
+  "pulseaudio#mic": {
+    "format": "{format_source}",
+    "format-source": "MIC: {volume}%",
+    "format-source-muted": "<span foreground=\"red\">MIC: OFF</span>",
+    "scroll-step": 5,
+    "on-scroll-up": "pactl set-source-volume 0 +5%",
+    "on-scroll-down": "pactl set-source-volume 0 -5%",
+    "on-click": "pactl set-source-mute 0 toggle",
+    "on-click-right": "pidof pulsemixer || alacritty -T pulsemixer -e pulsemixer &",
+  },
+  "network": {
+    "format": "<span foreground=\"red\">NET: Offline</span>",
+    "format-wifi": "NET: WIFI {essid}",
+    "format-ethernet": "NET: LAN {ifname}",
+    "format-disconnected": "<span foreground=\"red\">NET: Offline</span>",
+    "tooltip-format": "{ipaddr}",
+    "tooltip-format-wifi": "{essid} ({signalStrength}%)\n{ipaddr} | {frequency} MHz{icon}\nDownload: {bandwidthDownBytes}\nUpload: {bandwidthUpBytes}",
+    "tooltip-format-ethernet": "{ifname}\n{ipaddr} | {frequency} MHz{icon}\nDownload: {bandwidthDownBytes}\nUpload: {bandwidthUpBytes}",
+    "tooltip-format-disconnected": "Not Connected to any type of Network",
+    "on-click-right": "pidof nmtui || alacritty -T nmtui -e nmtui &"
+  },
+
+  "battery": {
+    "interval": 1,
+    "states": {
+      "good": 95,
+      "warning": 30,
+      "critical": 20
+    },
+    "tooltip": true,
+    "format": "BAT: {capacity}%",
+    "format-alt": "BAT: {time}",
+    "format-time": "{H}h {M}min",
+    "format-charging": "BAT: Charge",
+    "format-plugged": "BAT: Plugged",
+    "tooltip": "{time}",
+  },
+
+  "custom/daynight": {
+    "format": "Shade: {}",
+    "interval": 5,
+    "on-update": "",
+    "exec": "sleep 0.05; ~/.config/waybar/scripts/daynight.sh",
+    "on-click": "~/.config/waybar/scripts/daynight.sh toggle"
+  },
+
+  // Hypridle inhibitor
+  "custom/hypridle": {
+    "format": "Idle Mgr: {}",
+    "return-type": "json",
+    "escape": true,
+    "exec-on-event": true,
+    "interval": 60,
+    "exec": "~/.config/waybar/scripts/hypridle.sh status",
+    "on-click": "~/.config/waybar/scripts/hypridle.sh toggle",
+    "on-click-right": "hyprlock"
+  },
+}

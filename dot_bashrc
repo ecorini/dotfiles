@@ -9,19 +9,44 @@ PS1='\[\e[1;32m\]\u\[\e[37m\]@\[\e[1;35m\]\h\[\e[m\] \[\e[1;34m\]\W\[\e[m\] \[\e
 
 # Alias
 alias ls='ls --color=auto'
-alias vi='vim'
+alias vi='nvim'
+alias vim='nvim'
+
+# Exports
+export EDITOR=nvim
 
 # Path
-PATH=$PATH:/home/emanuele/Scripts/
-PATH=$PATH:/home/emanuele/.local/bin/
-PATH=$PATH:/home/emanuele/workspace/esp-open-sdk/xtensa-lx106-elf/bin
-PATH=$PATH:/home/emanuele/.local/share/gem/ruby/3.0.0/bin
+PATH=$PATH:~/scripts/
+PATH=$PATH:~/.local/bin/
+PATH=$PATH:~/workspace/esp-open-sdk/xtensa-lx106-elf/bin
+PATH=$PATH:~/.local/share/gem/ruby/3.0.0/bin
 
 # ESP8266 sdk
-export XTENSA_BIN_FOLDER=/home/emanuele/workspace/esp-open-sdk/xtensa-lx106-elf/bin
-export ESP8266_SDK_PATH=/home/emanuele/workspace/esp-open-sdk/sdk
+export XTENSA_BIN_FOLDER=~/workspace/esp-open-sdk/xtensa-lx106-elf/bin
+export ESP8266_SDK_PATH=~/workspace/esp-open-sdk/sdk
 
 # sudo autocompletion
 complete -cf sudo
 
-
+# bitwarden unlock
+function bwu() {
+  BW_STATUS=$(bw status | jq -r .status)
+  case "$BW_STATUS" in
+  "unauthenticated")
+    echo "Logging into BitWarden"
+    export BW_SESSION=$(bw login --raw)
+    ;;
+  "locked")
+    echo "Unlocking Vault"
+    export BW_SESSION=$(bw unlock --raw)
+    ;;
+  "unlocked")
+    echo "Vault is unlocked"
+    ;;
+  *)
+    echo "Unknown Login Status: $BW_STATUS"
+    return 1
+    ;;
+  esac
+  bw sync
+}
