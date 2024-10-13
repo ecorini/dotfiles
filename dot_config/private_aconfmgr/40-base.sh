@@ -34,7 +34,7 @@ AddPackage nano
 
 # package manager
 AddPackage pacman-contrib
-AddPackage --foreign yay
+AddPackage --foreign yay-bin
 AddPackage reflector
 CopyFile /etc/xdg/reflector/reflector.conf
 SystemdEnable reflector /usr/lib/systemd/system/reflector.timer
@@ -48,6 +48,8 @@ AddPackage wget
 AddPackage inotify-tools
 AddPackage lsb-release
 AddPackage unarchiver # unar and lsar: Objective-C tools for uncompressing archive files
+AddPackage --foreign backrest
+SystemdEnable --name backrest@$USER_NAME.service backrest /usr/lib/systemd/system/backrest@.service
 
 # disk management
 AddPackage hdparm

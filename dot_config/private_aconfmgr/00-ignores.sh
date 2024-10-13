@@ -19,6 +19,10 @@ IgnorePath '/etc/shells'
 IgnorePath '/etc/ssl/certs'
 IgnorePath '/etc/udev/hwdb.bin'
 IgnorePath '/etc/fonts/conf.d/*'
+IgnorePath '/etc/group'
+IgnorePath '/etc/passwd'
+IgnorePath '/etc/shadow'
+IgnorePath '/etc/gshadow'
 
 # /usr
 IgnorePath '/usr/*/*.egg-info/*'
