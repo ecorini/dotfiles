@@ -92,11 +92,11 @@
   },
 
   "custom/updates": {
-    "format": "{icon}<span foreground=\"orange\">{}</span>",
+    "format": "<span foreground=\"orange\">{}</span>{icon}",
     "return-type": "json",
     "format-icons": {
-      "pending-updates": "Updates: ",
-      "updated": "Up to date"
+      "updated": "Up to date",
+      "pending-updates": "<span foreground=\"orange\"> updates</span>",
     },
     "exec-if": "which waybar-updates",
     "exec": "waybar-updates",

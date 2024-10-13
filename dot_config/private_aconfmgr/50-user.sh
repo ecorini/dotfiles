@@ -37,7 +37,7 @@ AddPackage virtualbox
 AddPackage virtualbox-guest-iso
 
 # office
-AddPackage libreoffice-fresh
+AddPackage libreoffice-still
 AddPackage qalculate-gtk
 
 # terminals
@@ -50,11 +50,10 @@ AddPackage --foreign spotify
 AddPackage --foreign spotblock-git
 
 # utilities
-AddPackage --foreign hyprshade # Hyprland shade configuration tool
+AddPackage --foreign hyprshade  # Hyprland shade configuration tool
 AddPackage --foreign ventoy-bin # A new bootable USB solution
 
 # backup
 AddPackage rclone
 AddPackage --foreign pcloud-drive
 AddPackage --foreign rclonesync-git
-
