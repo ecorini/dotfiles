@@ -23,6 +23,9 @@ IgnorePath '/etc/group'
 IgnorePath '/etc/passwd'
 IgnorePath '/etc/shadow'
 IgnorePath '/etc/gshadow'
+IgnorePath '/etc/subgid'
+IgnorePath '/etc/subuid'
+IgnorePath '/etc/sudoers.d/*'
 
 # /usr
 IgnorePath '/usr/*/*.egg-info/*'

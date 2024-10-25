@@ -38,7 +38,6 @@ AddPackage nwg-look # GTK3 settings editor adapted to work on wlroots-based comp
 
 AddPackage gnome-keyring
 SystemdEnable --type user p11-kit /usr/lib/systemd/user/p11-kit-server.socket
-SystemdEnable --type user gcr-4 /usr/lib/systemd/user/gcr-ssh-agent.socket
 SystemdEnable --type user gnome-keyring /usr/lib/systemd/user/gnome-keyring-daemon.socket
 
 AddPackage gucharmap
