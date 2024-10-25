@@ -1,0 +1,87 @@
+{
+    "C_Cpp.errorSquiggles": "Disabled",
+    "C_Cpp.updateChannel": "Insiders",
+    "C_Cpp.enhancedColorization": "Enabled",
+    "editor.minimap.maxColumn": 86,
+    "editor.wordWrapColumn": 86,
+    "editor.rulers": [
+        86,
+        132
+    ],
+    "editor.largeFileOptimizations": false,
+    "editor.renderWhitespace": "boundary",
+    "editor.tabSize": 4,
+    "editor.insertSpaces": false,
+    "editor.tabCompletion": "off",
+    "editor.acceptSuggestionOnEnter": "on",
+    "editor.cursorSmoothCaretAnimation": "off",
+    "editor.cursorBlinking": "expand",
+    "editor.showFoldingControls": "always",
+    // "editor.fontFamily": "SF Mono",
+    // "editor.fontFamily": "Iosevka",
+    // "editor.fontFamily": "Pragmata Pro",
+    // "editor.fontFamily": "M+ 1m",
+    // "editor.fontFamily": "Source Code Pro",
+    // "editor.fontFamily": "Hack",
+    // "editor.fontFamily": "Monaco",
+    // "editor.fontFamily": "Input Mono",
+    // "editor.fontFamily": "Fira Code",
+    // "editor.fontFamily": "Courier New",
+    // "editor.fontFamily": "Inconsolata",
+    // "editor.fontFamily": "Consolas",
+    "editor.fontLigatures": true,
+    "editor.fontWeight": "200",
+    "editor.quickSuggestionsDelay": 0,
+    "editor.minimap.enabled": false,
+    "emmet.triggerExpansionOnTab": false,
+    "emmet.showExpandedAbbreviation": "never",
+    "emmet.showSuggestionsAsSnippets": false,
+    "emmet.showAbbreviationSuggestions": false,
+    "terminal.integrated.shell.windows": "C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
+    "todo-tree.tree.showScanModeButton": false,
+    "workbench.colorTheme": "COBO Gay Dark",
+    "workbench.colorCustomizations": {},
+    "zenMode.hideLineNumbers": false,
+    "workbench.editorAssociations": {
+        "*.ipynb": "jupyter.notebook.ipynb"
+    },
+    "files.autoSave": "afterDelay",
+    "editor.fontFamily": "'Dejavu Sans Mono'",
+    "explorer.confirmDelete": false,
+    "gitlab.instanceUrl": "http://cbgitlab.cobogroup.intra",
+    "cpp-check-lint.--enable": true,
+    "cpp-check-lint.cppcheck.--executable": "/usr/bin/cppcheck",
+    "cpp-check-lint.cppcheck.--customargs=": "--cppcheck-build-dir=/home/emanuele/workspace/cppcheck/cppcheck-build-dir/",
+    "cpp-check-lint.cppcheck.--language=": "c",
+    "cpp-check-lint.cppcheck.--onsave": false,
+    "cpp-check-lint.cppcheck.--std_c=": "c11",
+    "cpp-check-lint.cppcheck.--platform=": "unspecified",
+    "cpp-check-lint.cppcheck.--addon=": [
+        {
+            "script": "misra.py",
+            "args": [
+                "--rule-texts=/home/emanuele/workspace/cppcheck/misra_rules.txt"
+            ]
+        },
+    ],
+    "cpp-check-lint.cppcheck.--suppressions-list=": "/home/emanuele/workspace/cppcheck/cppcheck_suppressions.txt",
+    "cpp-check-lint.cpplint.--enable": false,
+    "settingsSync.ignoredSettings": [
+        "ceedlingExplorer.shellPath"
+    ],
+    "editor.formatOnPaste": true,
+    "diffEditor.ignoreTrimWhitespace": false,
+    "redhat.telemetry.enabled": false,
+    "[c]": {
+        "editor.defaultFormatter": "ms-vscode.cpptools"
+    },
+    "[python]": {
+        "editor.formatOnType": true
+    },
+    "git.enableSmartCommit": true,
+    "[shellscript]": {
+        "editor.defaultFormatter": "foxundermoon.shell-format"
+    },
+    "cmake.showOptionsMovedNotification": false,
+    "explorer.confirmDragAndDrop": false
+}

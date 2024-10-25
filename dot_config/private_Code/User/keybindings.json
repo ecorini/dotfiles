@@ -1,0 +1,51 @@
+// Place your key bindings in this file to override the defaults
+[
+	{
+		"key": "tab",
+		"command": "-acceptSelectedSuggestion",
+		"when": "suggestWidgetVisible && textInputFocus"
+	},
+	{
+		"key": "alt+left",
+		"command": "-workbench.action.terminal.focusPreviousPane",
+		"when": "terminalFocus && terminalProcessSupported"
+	},
+	{
+		"key": "alt+right",
+		"command": "-workbench.action.terminal.focusNextPane",
+		"when": "terminalFocus && terminalProcessSupported"
+	},
+	{
+		"key": "alt+left",
+		"command": "workbench.action.navigateBack"
+	},
+	{
+		"key": "ctrl+alt+-",
+		"command": "-workbench.action.navigateBack"
+	},
+	{
+		"key": "alt+right",
+		"command": "workbench.action.navigateForward"
+	},
+	{
+		"key": "ctrl+shift+-",
+		"command": "-workbench.action.navigateForward"
+	},
+	{
+		"key": "ctrl+k ctrl+[BracketRight]",
+		"command": "editor.unfoldRecursively"
+	},
+	{
+		"key": "ctrl+shift+7",
+		"command": "-coverage-gutters.displayCoverage"
+	},
+	{
+		"key": "ctrl+[Minus]",
+		"command": "workbench.action.terminal.focus"
+	},
+	{
+		"key": "ctrl+[Minus]",
+		"command": "workbench.action.focusActiveEditorGroup",
+		"when":    "terminalFocus"
+	}
+]
